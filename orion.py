@@ -266,17 +266,6 @@ if __name__ == "__main__":
                     speak("Sorry, an error occurred while searching Wikipedia.")
 
             # --- Email Commands ---
-            elif 'email to papa' in query or 'email to father' in query:
-                speak("What should I say in the email?")
-                content = takeCommand()
-                if content:
-                    to = "naveengadhwal23@gmail.com"
-                    if sendEmail(to, content):
-                        speak("Email has been sent to Papa!")
-                    else:
-                        speak("Sorry, I was unable to send the email.")
-                else:
-                    speak("Message not clear. Email cancelled.")
             
             elif 'email' in query:
                 speak("What should I say in the email?")
@@ -313,4 +302,5 @@ if __name__ == "__main__":
                     speak(direct_answer)
                 else:
                     speak(f"I couldn't find a direct answer. Here are the Google search results for {query}.")
+
                     webbrowser.open(f"https://www.google.com/search?q={urllib.parse.quote(query)}")
